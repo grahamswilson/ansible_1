@@ -1,0 +1,18 @@
+---
+
+ - name: Restarting Windows service
+   hosts: windows
+   gather_facts: no
+
+   tasks: 
+
+   - name: Restart Spool service
+     win_service:
+      name: spooler
+      state: restarted
+
+   - name: Create directory structure
+     win_file:
+      path: C:\graham
+      state: directory
+

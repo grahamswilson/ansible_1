@@ -1,0 +1,21 @@
+---
+
+ - name: get some facts
+   hosts: all
+   gather_facts: true
+   tasks:
+
+    - name: Get ansible MAC fact
+      debug:
+       msg: "{{ ansible_default_ipv4.macaddress }}"
+
+#    - name: Get ansible wrong fact
+#      debug:
+#       msg: "{{ ansible_default_ipv4.ipaddress }}"
+
+    - name: Install and check ntp
+      yum:
+       name: ntp
+       state: latest
+
+

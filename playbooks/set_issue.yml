@@ -1,0 +1,14 @@
+---
+
+ - name: Ensure /etc/issue compliance
+   hosts: test_servers
+   gather_facts: no
+   become: true
+
+   tasks:
+
+     - name: Move template issue file to /etc/issue if needed
+       template:
+        src: /home/gwilson1/playbooks/templates/issue_template.j2
+        dest: /etc/issue
+        backup: yes

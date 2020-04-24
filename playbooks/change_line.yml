@@ -1,0 +1,19 @@
+---
+
+ - name: Changaing a line in a file
+   hosts: test_servers
+   gather_facts: no
+   become: yes
+
+   tasks:
+    - name: Changing the line
+      lineinfile:
+       backup: yes
+       path: /etc/selinux/config
+       regexp: 'protected'
+       line: '# blah blah blah'
+       state: present
+       backrefs: yes
+
+
+

@@ -1,0 +1,9 @@
+---
+    ansible_connection: winrm
+    ansible_user: biadmin
+    ansible_password: S3cur3P@ssw0rd
+    ansible_port: 5985
+    ansible_winrm_server_cert_validation: ignore
+    ansible_winrm_transport: ntlm
+    ansible_winrm_scheme: http
+
